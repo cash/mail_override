@@ -1,15 +1,14 @@
 <?php
-    $send_user = $vars['entity']->send_user;
-    if (!isset($send_user)) {
-        $send_user = 2;
-    }
+/**
+ * Plugin settings for mail override
+ */
 
-    echo "<p>";
-    echo "User guid to send email to: ";
-    echo elgg_view('input/text', array(
-                                        'internalname' => 'params[send_user]',
-                                        'value' => $send_user,
-                                        'class' => ' ',
-                                    ) );
-    echo '</p>';
-?>
+$email_address = $vars['entity']->email_address;
+
+echo "<p>";
+echo elgg_echo('mailover:email') . ': ';
+echo elgg_view('input/text', array(
+	'internalname' => 'params[email_address]',
+	'value' => $email_address,
+));
+echo '</p>';
